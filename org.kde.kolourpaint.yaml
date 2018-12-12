@@ -10,6 +10,7 @@ finish-args:
   - --socket=wayland
   - --device=dri
   - --filesystem=xdg-config/kdeglobals:ro
+  - --filesystem=host
 cleanup:
   - /include
   - /lib/cmake
