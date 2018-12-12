@@ -26,8 +26,8 @@ modules:
       - /bin
     sources:
       - type: archive
-        url: http://download.kde.org/stable/frameworks/5.48/portingAids/kdelibs4support-5.48.0.tar.xz
-        sha256: 0e7f654bacd1e70aefb216998cd67d3280f6bbbf1ca6a2ee882142a70d2c1a15
+        url: https://download.kde.org/stable/frameworks/5.53/portingAids/kdelibs4support-5.53.0.tar.xz
+        sha256: 208a2f308aa55a1ec9c311e3c3224d65d78feb53a1df127b26007f046a9821aa
 
   - name: kolourpaint
     buildsystem: cmake-ninja
@@ -36,5 +36,5 @@ modules:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
     sources:
       - type: archive
-        url: http://download.kde.org/stable/applications/18.08.0/src/kolourpaint-18.08.0.tar.xz
-        sha256: f1e2e5d0bb1086037517c691c6bfb1159c7dd9ef86eccadba29485a810eb085c
+        url: https://download.kde.org/stable/applications/18.08.3/src/kolourpaint-18.08.3.tar.xz
+        sha256: 207d344db75e13f1d72050e329dba3d8a48227c22c93e916741f76ae742fb44b
