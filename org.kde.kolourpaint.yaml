@@ -1,6 +1,6 @@
 id: org.kde.kolourpaint
 runtime: org.kde.Platform
-runtime-version: '5.11'
+runtime-version: '5.12'
 sdk: org.kde.Sdk
 command: kolourpaint
 rename-icon: kolourpaint
@@ -26,8 +26,8 @@ modules:
       - /bin
     sources:
       - type: archive
-        url: https://download.kde.org/stable/frameworks/5.53/portingAids/kdelibs4support-5.53.0.tar.xz
-        sha256: 208a2f308aa55a1ec9c311e3c3224d65d78feb53a1df127b26007f046a9821aa
+        url: https://download.kde.org/stable/frameworks/5.55/portingAids/kdelibs4support-5.55.0.tar.xz
+        sha256: 6948b490be09f6390fd52d276ef3731978b316d3fcfa78556c325d6fc0962fd0
 
   - name: kolourpaint
     buildsystem: cmake-ninja
@@ -36,5 +36,5 @@ modules:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
     sources:
       - type: archive
-        url: https://download.kde.org/stable/applications/18.12.0/src/kolourpaint-18.12.0.tar.xz
-        sha256: ec71422232340c38a331480cd2f5620d453f46ede7db1ac34413c2ccda0212d4
+        url: https://download.kde.org/stable/applications/18.12.2/src/kolourpaint-18.12.2.tar.xz
+        sha256: c9a574530f9c8868578d8c98d7c83aff7497367d396dceb0410c17fd142c2886
