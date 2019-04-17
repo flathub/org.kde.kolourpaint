@@ -36,5 +36,5 @@ modules:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
     sources:
       - type: archive
-        url: https://download.kde.org/stable/applications/18.12.2/src/kolourpaint-18.12.2.tar.xz
-        sha256: c9a574530f9c8868578d8c98d7c83aff7497367d396dceb0410c17fd142c2886
+        url: https://download.kde.org/stable/applications/19.04.0/src/kolourpaint-19.04.0.tar.xz
+        sha256: d6cd087ba34a1a8fec9349dea06c1b71a70f6e8455adb41d4820a376eb2ed141
