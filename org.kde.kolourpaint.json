@@ -1,0 +1,57 @@
+{
+   "id": "org.kde.kolourpaint",
+   "runtime": "org.kde.Platform",
+   "runtime-version": "5.12",
+   "sdk": "org.kde.Sdk",
+   "command": "kolourpaint",
+   "rename-icon": "kolourpaint",
+   "finish-args": [
+      "--share=ipc",
+      "--socket=x11",
+      "--socket=wayland",
+      "--device=dri",
+      "--filesystem=xdg-config/kdeglobals:ro",
+      "--filesystem=host"
+   ],
+   "cleanup": [
+      "/include",
+      "/lib/cmake",
+      "/lib/plugins/designer",
+      "/share/man"
+   ],
+   "modules": [
+      {
+         "name": "kdelibs4support",
+         "buildsystem": "cmake-ninja",
+         "builddir": true,
+         "config-opts": [
+            "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+         ],
+         "cleanup": [
+            "/bin"
+         ],
+         "sources": [
+            {
+               "type": "archive",
+               "url": "https://download.kde.org/stable/frameworks/5.55/portingAids/kdelibs4support-5.55.0.tar.xz",
+               "sha256": "6948b490be09f6390fd52d276ef3731978b316d3fcfa78556c325d6fc0962fd0"
+            }
+         ]
+      },
+      {
+         "name": "kolourpaint",
+         "buildsystem": "cmake-ninja",
+         "builddir": true,
+         "config-opts": [
+            "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+         ],
+         "sources": [
+            {
+               "type": "archive",
+               "url": "https://download.kde.org/stable/applications/19.04.0/src/kolourpaint-19.04.0.tar.xz",
+               "sha256": "d6cd087ba34a1a8fec9349dea06c1b71a70f6e8455adb41d4820a376eb2ed141"
+            }
+         ]
+      }
+   ]
+}
