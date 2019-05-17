@@ -33,8 +33,8 @@
          "sources": [
             {
                "type": "archive",
-               "url": "https://download.kde.org/stable/frameworks/5.55/portingAids/kdelibs4support-5.55.0.tar.xz",
-               "sha256": "6948b490be09f6390fd52d276ef3731978b316d3fcfa78556c325d6fc0962fd0"
+               "url": "https://download.kde.org/stable/frameworks/5.57/portingAids/kdelibs4support-5.57.0.tar.xz",
+               "sha256": "e9d1c06191031b482ea01d891756d125ff32927239c36a3011fc7b8f17aca1b0"
             }
          ]
       },
