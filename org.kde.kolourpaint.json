@@ -33,8 +33,8 @@
          "sources": [
             {
                "type": "archive",
-               "url": "https://download.kde.org/stable/frameworks/5.60/portingAids/kdelibs4support-5.60.0.tar.xz",
-               "sha256": "91b207b3d46c6bc5e97b9b89717db1ef7c4359c65bc4595794143ba78ce92a60"
+               "url": "https://download.kde.org/stable/frameworks/5.61/portingAids/kdelibs4support-5.61.0.tar.xz",
+               "sha256": "ae6f7c10e1fe67ded687f38a8ab3c8d483ae06ae69344bd1e683af752cf40b5c"
             }
          ]
       },
@@ -48,8 +48,8 @@
          "sources": [
             {
                "type": "archive",
-               "url": "https://download.kde.org/stable/applications/19.08.0/src/kolourpaint-19.08.0.tar.xz",
-               "sha256": "00596d813eff27e45de7f51ae411b144ee21a7ae2baf576e248046dbd97e097d"
+               "url": "https://download.kde.org/stable/applications/19.08.1/src/kolourpaint-19.08.1.tar.xz",
+               "sha256": "59c1a2a9d8f012ff1c483dae4f1019232ec667bd88e61c6c8fc07e47312ef23f"
             }
          ]
       }
