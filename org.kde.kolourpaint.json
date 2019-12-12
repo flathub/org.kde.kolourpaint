@@ -48,8 +48,8 @@
          "sources": [
             {
                "type": "archive",
-               "url": "https://download.kde.org/stable/applications/19.08.2/src/kolourpaint-19.08.2.tar.xz",
-               "sha256": "e8bde8d516159ae93dfe56565eea2919d2154606fd1814202f30caf21f659cda"
+               "url": "https://download.kde.org/stable/release-service/19.12.0/src/kolourpaint-19.12.0.tar.xz",
+               "sha256": "bbe2ec76db67caf90060dd03af3f3801f8d95e60945f544c88402f26d79bbabb"
             }
          ]
       }
