@@ -47,6 +47,9 @@
          "config-opts": [
             "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
          ],
+         "post-install": [
+            "gunzip -S z /app/share/icons/hicolor/scalable/apps/kolourpaint.svgz"
+         ],
          "sources": [
             {
                "type": "archive",
