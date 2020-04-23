@@ -45,7 +45,7 @@
          "buildsystem": "cmake-ninja",
          "builddir": true,
          "config-opts": [
-            "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            "-DCMAKE_BUILD_TYPE=Release"
          ],
          "post-install": [
             "gunzip -S z /app/share/icons/hicolor/scalable/apps/kolourpaint.svgz"
