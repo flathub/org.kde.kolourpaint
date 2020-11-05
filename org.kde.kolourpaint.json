@@ -35,7 +35,7 @@
          "sources": [
             {
                "type": "archive",
-               "url": "https://download.kde.org/stable/release-service/20.08.2/src/kolourpaint-20.08.2.tar.xz",
+               "url": "https://download.kde.org/stable/release-service/20.08.3/src/kolourpaint-20.08.3.tar.xz",
                "sha256": "fbcd875a4a407d9b1e5a637d4947bacfb50f39e10af3327f30fdbb953528aae0"
             }
          ]
