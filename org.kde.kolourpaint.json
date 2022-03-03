@@ -35,8 +35,8 @@
          "sources": [
             {
                "type": "archive",
-               "url": "https://download.kde.org/stable/release-service/21.12.2/src/kolourpaint-21.12.2.tar.xz",
-               "sha256": "619bcc87c15372bedebdcc02c9f2f388a9375cea15ffbbb3d293601dc685a37c"
+               "url": "https://download.kde.org/stable/release-service/21.12.3/src/kolourpaint-21.12.3.tar.xz",
+               "sha256": "d2199ded688d768d8066a262d7a6b706b72a880fab9a394ffe64ae31be447f4d"
             }
          ]
       }
