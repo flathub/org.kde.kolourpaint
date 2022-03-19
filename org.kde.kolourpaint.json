@@ -36,7 +36,13 @@
             {
                "type": "archive",
                "url": "https://download.kde.org/stable/release-service/21.12.3/src/kolourpaint-21.12.3.tar.xz",
-               "sha256": "d2199ded688d768d8066a262d7a6b706b72a880fab9a394ffe64ae31be447f4d"
+               "sha256": "d2199ded688d768d8066a262d7a6b706b72a880fab9a394ffe64ae31be447f4d",
+               "x-checker-data": {
+                  "type": "anitya",
+                  "project-id": 8763,
+                  "stable-only": true,
+                  "url-template": "https://download.kde.org/stable/release-service/$version/src/kolourpaint-$version.tar.xz"
+              }
             }
          ]
       }
