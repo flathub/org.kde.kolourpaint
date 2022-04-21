@@ -1,50 +1,50 @@
 {
-   "id": "org.kde.kolourpaint",
-   "runtime": "org.kde.Platform",
-   "runtime-version": "5.15-21.08",
-   "sdk": "org.kde.Sdk",
-   "command": "kolourpaint",
-   "rename-icon": "kolourpaint",
-   "finish-args": [
-      "--share=ipc",
-      "--share=network",
-      "--socket=cups",
-      "--socket=x11",
-      "--socket=wayland",
-      "--env=QT_QPA_PLATFORM=xcb",
-      "--device=dri",
-      "--filesystem=host"
-   ],
-   "cleanup": [
-      "/include",
-      "/lib/cmake",
-      "/lib/plugins/designer",
-      "/share/man"
-   ],
-   "modules": [
-      {
-         "name": "kolourpaint",
-         "buildsystem": "cmake-ninja",
-         "builddir": true,
-         "config-opts": [
-            "-DCMAKE_BUILD_TYPE=Release"
-         ],
-         "post-install": [
-            "gunzip -S z /app/share/icons/hicolor/scalable/apps/kolourpaint.svgz"
-         ],
-         "sources": [
-            {
-               "type": "archive",
-               "url": "https://download.kde.org/stable/release-service/21.12.3/src/kolourpaint-21.12.3.tar.xz",
-               "sha256": "d2199ded688d768d8066a262d7a6b706b72a880fab9a394ffe64ae31be447f4d",
-               "x-checker-data": {
-                  "type": "anitya",
-                  "project-id": 8763,
-                  "stable-only": true,
-                  "url-template": "https://download.kde.org/stable/release-service/$version/src/kolourpaint-$version.tar.xz"
-              }
-            }
-         ]
-      }
-   ]
+    "id": "org.kde.kolourpaint",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "5.15-21.08",
+    "sdk": "org.kde.Sdk",
+    "command": "kolourpaint",
+    "rename-icon": "kolourpaint",
+    "finish-args": [
+        "--share=ipc",
+        "--share=network",
+        "--socket=cups",
+        "--socket=x11",
+        "--socket=wayland",
+        "--env=QT_QPA_PLATFORM=xcb",
+        "--device=dri",
+        "--filesystem=host"
+    ],
+    "cleanup": [
+        "/include",
+        "/lib/cmake",
+        "/lib/plugins/designer",
+        "/share/man"
+    ],
+    "modules": [
+        {
+            "name": "kolourpaint",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release"
+            ],
+            "post-install": [
+                "gunzip -S z /app/share/icons/hicolor/scalable/apps/kolourpaint.svgz"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/22.04.0/src/kolourpaint-22.04.0.tar.xz",
+                    "sha256": "aeb2e439f32d9b1d7556e807c0902c870b90691f84764266e3f7fd92af5d9163",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/kolourpaint-$version.tar.xz"
+                    }
+                }
+            ]
+        }
+    ]
 }
