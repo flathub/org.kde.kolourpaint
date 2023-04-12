@@ -6,14 +6,13 @@
     "command": "kolourpaint",
     "rename-icon": "kolourpaint",
     "finish-args": [
+        "--device=dri",
+        "--filesystem=home",
         "--share=ipc",
         "--share=network",
         "--socket=cups",
-        "--socket=x11",
-        "--socket=wayland",
-        "--env=QT_QPA_PLATFORM=xcb",
-        "--device=dri",
-        "--filesystem=host"
+        "--socket=fallback-x11",
+        "--socket=wayland"
     ],
     "cleanup": [
         "/include",
