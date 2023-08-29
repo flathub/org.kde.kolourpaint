@@ -8,6 +8,11 @@
     "finish-args": [
         "--device=dri",
         "--filesystem=home",
+        "--filesystem=/media:ro",
+        "--filesystem=/mnt:ro",
+        "--filesystem=/run/media:ro",
+        "--filesystem=/var/run/media:ro",
+        "--filesystem=/var/mnt:ro",
         "--share=ipc",
         "--share=network",
         "--socket=cups",
