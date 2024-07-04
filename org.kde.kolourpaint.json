@@ -35,8 +35,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/24.05.1/src/kolourpaint-24.05.1.tar.xz",
-                    "sha256": "0f69175404321e20152706b35a23f8f97fbac69f491f6181a5eee28a3e951b9e",
+                    "url": "https://download.kde.org/stable/release-service/24.05.2/src/kolourpaint-24.05.2.tar.xz",
+                    "sha256": "79b177d7bde8f58035d86e2bf552001127496358a4fa946debd952a1c9f121ba",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 8763,
