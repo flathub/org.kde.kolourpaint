@@ -25,7 +25,7 @@
             "directory": "lib/ffmpeg",
             "version": "24.08",
             "add-ld-path": ".",
-            "no-autodownload": "false"
+            "no-autodownload": false
         }
     },
     "cleanup-commands": [
