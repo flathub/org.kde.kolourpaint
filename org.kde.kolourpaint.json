@@ -20,17 +20,6 @@
         "/lib/plugins/designer",
         "/share/man"
     ],
-    "add-extensions": {
-        "org.freedesktop.Platform.ffmpeg-full": {
-            "directory": "lib/ffmpeg",
-            "version": "24.08",
-            "add-ld-path": ".",
-            "no-autodownload": false
-        }
-    },
-    "cleanup-commands": [
-        "mkdir -p /app/lib/ffmpeg"
-    ],
     "modules": [
         {
             "name": "kolourpaint",
