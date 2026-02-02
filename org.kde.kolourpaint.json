@@ -18,6 +18,7 @@
         "/include",
         "/lib/cmake",
         "/lib/plugins/designer",
+        "/share/doc",
         "/share/man"
     ],
     "modules": [
