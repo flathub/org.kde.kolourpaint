@@ -7,6 +7,7 @@
     "rename-icon": "kolourpaint",
     "finish-args": [
         "--device=dri",
+        "--env=SANE_CONFIG_DIR=/var/config/sane.d:",
         "--filesystem=home",
         "--share=ipc",
         "--share=network",
@@ -22,6 +23,105 @@
         "/share/man"
     ],
     "modules": [
+        {
+            "name": "sane",
+            "buildsystem": "autotools",
+            "config-opts": [
+                "--with-usb",
+                "--with-v4l",
+                "--with-gphoto2",
+                "--enable-pthread",
+                "--enable-pnm-backend",
+                "--enable-pthread",
+                "--enable-avahi"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://gitlab.com/sane-project/backends/-/archive/1.4.0/backends-1.4.0.tar.gz",
+                    "sha256": "9c50ee76e35d98d7ae0cbb97d4c2a3c15663a78fdd74b0ed2bf2fe8e1a73f63a",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 4760,
+                        "url-template": "https://gitlab.com/sane-project/backends/-/archive/$version/backends-$version.tar.gz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ksanecore",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DQT_MAJOR_VERSION=6"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/26.08.1/src/ksanecore-26.08.1.tar.xz",
+                    "sha256": "0555c4109b6132a774ce4081c12d9deeed8fdb152fa65714f7f73cb20965494d",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/ksanecore-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "libksane",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DQT_MAJOR_VERSION=6"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/26.08.1/src/libksane-26.08.1.tar.xz",
+                    "sha256": "95281efd9a8754d152889958336deb9e16291ef77280bb29f8d48e9ed926fc07",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/libksane-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "sane-airscan",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/alexpevzner/sane-airscan/archive/refs/tags/0.99.38.tar.gz",
+                    "sha256": "1e5b3b8373141caa37bf42fe74ae1950de3ff15c84966d8a415485d334ba5507",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 121086,
+                        "stable-only": true,
+                        "url-template": "https://github.com/alexpevzner/sane-airscan/archive/refs/tags/$version.tar.gz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "sane-airscan",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/alexpevzner/sane-airscan/archive/refs/tags/0.99.38.tar.gz",
+                    "sha256": "1e5b3b8373141caa37bf42fe74ae1950de3ff15c84966d8a415485d334ba5507",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 121086,
+                        "stable-only": true,
+                        "url-template": "https://github.com/alexpevzner/sane-airscan/archive/refs/tags/$version.tar.gz"
+                    }
+                }
+            ]
+        },
         {
             "name": "kolourpaint",
             "buildsystem": "cmake-ninja",
