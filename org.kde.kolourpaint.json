@@ -1,18 +1,20 @@
 {
     "id": "org.kde.kolourpaint",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.10",
+    "runtime-version": "6.11",
     "sdk": "org.kde.Sdk",
     "command": "kolourpaint",
     "rename-icon": "kolourpaint",
     "finish-args": [
         "--device=dri",
+        "--env=SANE_CONFIG_DIR=/var/config/sane.d:",
         "--filesystem=home",
         "--share=ipc",
         "--share=network",
         "--socket=cups",
         "--socket=fallback-x11",
-        "--socket=wayland"
+        "--socket=wayland",
+        "--system-talk-name=org.freedesktop.Avahi"
     ],
     "cleanup": [
         "/include",
@@ -23,21 +25,149 @@
     ],
     "modules": [
         {
-            "name": "kolourpaint",
-            "buildsystem": "cmake-ninja",
-            "builddir": true,
+            "name": "avahi",
+            "buildsystem": "autotools",
             "config-opts": [
-                "-DCMAKE_BUILD_TYPE=Release",
-                "-DQT_MAJOR_VERSION=6"
+                "--disable-gtk",
+                "--disable-qt3",
+                "--disable-qt4",
+                "--disable-qt5",
+                "--disable-mono",
+                "--disable-monodoc",
+                "--with-distro=none",
+                "--disable-pygobject",
+                "--disable-python-dbus",
+                "--disable-python",
+                "--disable-manpages",
+                "--disable-libdaemon",
+                "--disable-daemon",
+                "--enable-compat-libdns_sd",
+                "--disable-libevent"
             ],
-            "post-install": [
-                "gunzip -S z /app/share/icons/hicolor/scalable/apps/kolourpaint.svgz"
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/lathiat/avahi",
+                    "tag": "v0.8",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^v([\\d.]+)$"
+                    },
+                    "commit": "f060abee2807c943821d88839c013ce15db17b58"
+                }
+            ]
+        },
+        {
+            "name": "sane",
+            "buildsystem": "autotools",
+            "config-opts": [
+                "--with-usb",
+                "--with-v4l",
+                "--with-gphoto2",
+                "--enable-pthread",
+                "--enable-pnm-backend",
+                "--enable-pthread",
+                "--enable-avahi"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/26.04.3/src/kolourpaint-26.04.3.tar.xz",
-                    "sha256": "fece103c529290212cc7a66e9f22e894eb034d04579332a17d7f6c0e8eda6069",
+                    "url": "https://gitlab.com/sane-project/backends/-/archive/1.4.0/backends-1.4.0.tar.gz",
+                    "sha256": "9c50ee76e35d98d7ae0cbb97d4c2a3c15663a78fdd74b0ed2bf2fe8e1a73f63a",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 4760,
+                        "url-template": "https://gitlab.com/sane-project/backends/-/archive/$version/backends-$version.tar.gz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ksanecore",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DQT_MAJOR_VERSION=6"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/26.08.1/src/ksanecore-26.08.1.tar.xz",
+                    "sha256": "0555c4109b6132a774ce4081c12d9deeed8fdb152fa65714f7f73cb20965494d",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/ksanecore-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "libksane",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DQT_MAJOR_VERSION=6"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/26.08.1/src/libksane-26.08.1.tar.xz",
+                    "sha256": "95281efd9a8754d152889958336deb9e16291ef77280bb29f8d48e9ed926fc07",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/libksane-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "sane-airscan",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/alexpevzner/sane-airscan/archive/refs/tags/0.99.38.tar.gz",
+                    "sha256": "1e5b3b8373141caa37bf42fe74ae1950de3ff15c84966d8a415485d334ba5507",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 121086,
+                        "stable-only": true,
+                        "url-template": "https://github.com/alexpevzner/sane-airscan/archive/refs/tags/$version.tar.gz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "sane-airscan",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/alexpevzner/sane-airscan/archive/refs/tags/0.99.38.tar.gz",
+                    "sha256": "1e5b3b8373141caa37bf42fe74ae1950de3ff15c84966d8a415485d334ba5507",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 121086,
+                        "stable-only": true,
+                        "url-template": "https://github.com/alexpevzner/sane-airscan/archive/refs/tags/$version.tar.gz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "kolourpaint",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/26.08.1/src/kolourpaint-26.08.1.tar.xz",
+                    "sha256": "e2ae301feb5e0ccb7634421b7e320808590fcf7c5bf4c4eb3c60d87bd68caca3",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 8763,
